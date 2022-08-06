@@ -1,0 +1,8 @@
+[book]
+authors = ["cnmade"]
+language = "en"
+multilingual = false
+src = "book"
+title = "bsmi-rs"
+[build]
+build-dir = "docs"
