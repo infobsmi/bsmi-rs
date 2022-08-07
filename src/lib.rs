@@ -1,7 +1,9 @@
 pub mod timeutils;
 #[cfg(test)]
 mod tests {
-    use crate::timeutils::get_current_unix_timestamp;
+    use crate::timeutils::{
+        get_current_unix_timestamp_as_milsecs, get_current_unix_timestamp_as_secs,
+    };
 
     #[test]
     fn it_works() {
@@ -10,8 +12,17 @@ mod tests {
     }
 
     #[test]
-    fn test_get_current_unix_timestamp() {
+    fn test_get_current_unix_timestamp_as_secs() {
         println!("hello world");
-        assert_eq!(0, get_current_unix_timestamp());
+        let ts_now = get_current_unix_timestamp_as_secs();
+        println!("tsNow: {}", ts_now);
+        assert_ne!(0, ts_now);
+    }
+    #[test]
+    fn test_get_current_unix_timestamp_as_milsecs() {
+        println!("hello world");
+        let ts_now = get_current_unix_timestamp_as_milsecs();
+        println!("tsNow: {}", ts_now);
+        assert_ne!(0, ts_now);
     }
 }
